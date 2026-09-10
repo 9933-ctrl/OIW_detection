@@ -1,0 +1,6 @@
+Method,Accuracy_percent,Precision_percent,Recall_percent,F1_score_percent,AUC
+CNN,83.6,82.1,80.3,81.2,0.86
+YOLOv11,91.1,90.2,89.9,90,0.93
+U-Net,90.2,89.2,88.5,88.8,0.92
+ViT,93.4,92.7,91.9,92.3,0.95
+Ours,96.2,95.8,95.1,95.4,0.98

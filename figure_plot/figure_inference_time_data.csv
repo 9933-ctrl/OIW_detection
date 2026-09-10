@@ -1,0 +1,6 @@
+Method,Inference_time_ms_per_256x256_patch,Hardware
+CNN,22,NVIDIA A100 GPU
+YOLOv11,40,NVIDIA A100 GPU
+U-Net,45,NVIDIA A100 GPU
+ViT,63,NVIDIA A100 GPU
+Hybrid (ours),35,NVIDIA A100 GPU

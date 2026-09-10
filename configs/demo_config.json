@@ -1,0 +1,77 @@
+{
+  "project": "OIW_SWOT_Hybrid_CNN_Transformer_Reproduction",
+  "article_title": "Deep Learning-based Oceanic Internal Wave Detection from SWOT Satellite Imaginary Observations",
+  "task": "patch-level binary OIW detection from 3-channel SWOT-derived patches",
+  "input": {
+    "patch_size": 64,
+    "channels": [
+      "SSH anomaly",
+      "high-pass filtered SSH",
+      "local gradient magnitude"
+    ],
+    "expected_npz_keys": [
+      "x",
+      "y"
+    ]
+  },
+  "model": {
+    "name": "HybridOIWDetector",
+    "cnn_channels": [
+      16,
+      32,
+      64
+    ],
+    "embedding_dim": 64,
+    "num_transformer_blocks": 2,
+    "num_attention_heads": 4,
+    "sra_reduction_ratios": [
+      4,
+      2
+    ],
+    "dropout": 0.1,
+    "num_classes": 1
+  },
+  "training": {
+    "loss": "BCEWithLogitsLoss",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0008,
+    "weight_decay": 0.0001,
+    "batch_size": 16,
+    "epochs": 3,
+    "train_fraction": 0.8,
+    "selection_metric": "validation_f1",
+    "gradient_clipping": 1.0,
+    "seed": 42
+  },
+  "augmentation": {
+    "additive_gaussian_noise": true,
+    "salt_and_pepper_noise": true,
+    "speckle_noise": true,
+    "snr_db": [
+      5,
+      10,
+      15,
+      20,
+      25
+    ],
+    "small_rotation_degrees": [
+      -5,
+      5
+    ]
+  },
+  "hardware_reported_in_article": {
+    "gpu": "NVIDIA A100",
+    "system_ram": "512 GB"
+  },
+  "data_paths": {
+    "real_npz_train": "data/real/train_patches.npz",
+    "real_npz_test": "data/real/test_patches.npz",
+    "demo_npz": "outputs/demo_synthetic_oiw.npz"
+  },
+  "output_paths": {
+    "checkpoint": "outputs/demo_best_model.pt",
+    "metrics_csv": "outputs/demo_train_metrics.csv",
+    "final_metrics_json": "outputs/demo_final_metrics.json",
+    "run_log": "logs/reproduction_demo.log"
+  }
+}
