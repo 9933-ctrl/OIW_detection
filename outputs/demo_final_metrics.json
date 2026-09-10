@@ -1,0 +1,14 @@
+{
+  "config": "configs/demo_config.json",
+  "dataset": "outputs/demo_synthetic_oiw.npz",
+  "synthetic_demo": true,
+  "device": "cpu",
+  "torch_version": "2.10.0+cpu",
+  "model_parameters": 128273,
+  "epochs": 3,
+  "best_validation_f1": 0.9629629629629629,
+  "elapsed_seconds": 1.0,
+  "metrics_csv": "outputs/demo_train_metrics.csv",
+  "checkpoint": "outputs/demo_best_model.pt",
+  "note": "Synthetic demo logs verify the code path only; use original SWOT/SAR data for editorial validation."
+}

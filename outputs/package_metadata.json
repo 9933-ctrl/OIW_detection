@@ -1,0 +1,23 @@
+{
+  "package_name": "oiw_method_reproduction_code_logs",
+  "created_utc": "2026-09-10T06:03:23.259016Z",
+  "created_local_note": "User local time around request: 2026-09-10T13:44+08:00",
+  "purpose": "Method reproduction code and execution logs for OIW hybrid CNN-Transformer manuscript",
+  "integrity_note": "Demo outputs are synthetic smoke-test outputs, not original paper training logs. Replace with original SWOT/SAR data and original workstation logs for formal verification.",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "core_scripts": [
+    "src/oiw_repro/model.py",
+    "src/oiw_repro/preprocess.py",
+    "src/oiw_repro/dataset.py",
+    "src/oiw_repro/train.py",
+    "src/oiw_repro/evaluate.py"
+  ],
+  "logs": [
+    "logs/reproduction_demo.log",
+    "logs/environment_info.log",
+    "logs/model_summary.log",
+    "logs/recreate_published_figures.log",
+    "logs/evaluate_demo_full_dataset.log"
+  ]
+}

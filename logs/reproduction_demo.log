@@ -1,0 +1,33 @@
+=== Reproduction demo smoke-test log ===
+timestamp_utc=2025-09-10T06:02:42.773316Z
+This demo uses deterministic synthetic data and does not claim to be the original paper training log.
+command=/opt/pyvenv/bin/python -m oiw_repro.train --config configs/demo_config.json --synthetic-demo
+
+=== OIW hybrid CNN--Transformer training ===
+config=configs/demo_config.json
+dataset=outputs/demo_synthetic_oiw.npz samples=160 train=128 val=32
+device=cpu torch=2.10.0+cpu
+model_parameters=128273
+epochs=3 batch_size=16 seed=42
+epoch=001 train_loss=0.6082 train_f1=0.7077 val_loss=0.9053 val_acc=0.5938 val_precision=1.0000 val_recall=0.0714 val_f1=0.1333 val_auc=0.9603
+saved_checkpoint=outputs/demo_best_model.pt best_val_f1=0.1333
+epoch=002 train_loss=0.1696 train_f1=0.9231 val_loss=0.0858 val_acc=0.9688 val_precision=1.0000 val_recall=0.9286 val_f1=0.9630 val_auc=1.0000
+saved_checkpoint=outputs/demo_best_model.pt best_val_f1=0.9630
+epoch=003 train_loss=0.1088 train_f1=0.9635 val_loss=0.0931 val_acc=0.9375 val_precision=1.0000 val_recall=0.8571 val_f1=0.9231 val_auc=1.0000
+final_metrics_json=outputs/demo_final_metrics.json
+{
+  "config": "configs/demo_config.json",
+  "dataset": "data/L3_V1_fig",
+  "synthetic_demo": true,
+  "device": "cpu",
+  "torch_version": "2.10.0+cpu",
+  "model_parameters": 128273,
+  "epochs": 3,
+  "best_validation_f1": 0.9629629629629629,
+  "elapsed_seconds": 1.0,
+  "metrics_csv": "outputs/demo_train_metrics.csv",
+  "checkpoint": "outputs/demo_best_model.pt",
+  "note": "Synthetic demo logs verify the code path only; use original SWOT/SAR data for editorial validation."
+}
+
+exit_code=0
