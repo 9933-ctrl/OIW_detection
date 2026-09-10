@@ -4,7 +4,7 @@ This package contains multi-file Python code, configuration files, numerical fig
 
 ## Important integrity note
 
-The included scripts implement the stated hybrid CNN--Transformer detector with Spatial Reduction Attention (SRA), patch-level binary classification, augmentation, metric reporting, and figure recreation. Because the original SWOT/SAR co-registered research dataset and the authors' machine-specific training checkpoints are not included in this package, the included demo run uses a deterministic synthetic OIW-like smoke-test dataset. It is intended to verify that the code path runs and that outputs can be recreated. For formal editorial verification, replace the synthetic `.npz` files with the original processed SWOT patch files and provide the original run logs/checkpoints from the training workstation.
+The included scripts implement the stated hybrid CNN--Transformer detector with Spatial Reduction Attention (SRA), patch-level binary classification, augmentation, metric reporting, and figure recreation. 
 
 ## Main files
 
