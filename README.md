@@ -36,10 +36,8 @@ python -m oiw_repro.train --config configs/method_config_article.json
 python -m oiw_repro.evaluate --config configs/method_config_article.json --checkpoint outputs/best_model.pt
 ```
 
-## Recreate published numerical figures
+## Recreate figures
 
-```bash
-python scripts/recreate_published_figures.py --out_dir outputs/recreated_figures
-```
+The data is in `figure_plot` files
 
 
